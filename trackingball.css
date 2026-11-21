@@ -1,0 +1,388 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+    flex-direction: column;
+    overflow: hidden;
+
+    
+
+}
+
+
+#scene-nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 1px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#scene-nav a {
+    width: 75px;
+    height: 75px;
+    background-color: black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid white;
+}
+
+#scene-nav img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+    
+    background-color: black;
+}
+
+
+#sky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: skyblue;
+    z-index: -1;
+}
+
+#cloud-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.cloud {
+    position: absolute;
+    top: 100px;
+    left: 120px;
+    width: 150px;
+    height: 45px;
+    background-color: var(--cloud-color, white);
+    border-radius: 50px;
+    animation: float 20s linear infinite alternate;
+    box-shadow: 0 5px 12px rgba(40, 70, 100, 0.12);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.cloud::before {
+    content: "";
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    background-color: var(--cloud-color, white);
+    border-radius: 50%;
+    top: -30px;
+    left: 25px;
+}
+
+.cloud::after {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: var(--cloud-color, white);
+    border-radius: 50%;
+    top: -40px;
+    right: 15px;
+}
+
+.cloud-bump {
+    position: absolute;
+    
+    height: 55px;
+    background-color:white;
+    border-radius: 50%;
+    top: -25px;
+    left: -5px;
+    width: 55px;
+}
+.cloud {
+    top: 30px;
+    left: 5%;
+}
+
+.cloud:nth-child(2) {
+    top: 160px;
+    left: 55%;
+    transform: scale(1.3);
+}
+
+.cloud:nth-child(3) {
+    top: 45px;
+    left: 82%;
+    transform: scale(0.8);
+}
+
+.cloud:nth-child(4) {
+    top: 110px;
+    left: 18%;
+    transform: scale(0.9);
+}
+
+.cloud:nth-child(5) {
+    top: 200px;
+    left: 38%;
+    transform: scale(1.1);
+}
+
+.cloud:nth-child(6) {
+    top: 130px;
+    left: 72%;
+    transform: scale(0.9);
+}
+
+.cloud:nth-child(7) {
+    top: 20px;
+    left: 38%;
+    transform: scale(1.2);
+}
+
+.cloud:nth-child(8) {
+    top: 190px;
+    left: 80%;
+    transform: scale(0.8);
+}
+
+.cloud:nth-child(9) {
+    top: 210px;
+    left: 8%;
+    transform: scale(1.1);
+}
+
+.cloud:nth-child(10) {
+    top: 80px;
+    left: 48%;
+    transform: scale(1.2);
+}
+
+.cloud:nth-child(11) {
+    top: 150px;
+    left: 2%;
+    transform: scale(1.3);
+}
+
+.cloud:nth-child(12) {
+    top: 180px;
+    left: 85%;
+    transform: scale(1.2);
+}
+
+.cloud:nth-child(13) {
+    top: 100px;
+    left: 25%;
+    transform: scale(1.4);
+}
+
+.cloud:nth-child(14) {
+    top: 120px;
+    left: 62%;
+    transform: scale(1.3);
+}
+
+.cloud:nth-child(n+4) {
+    opacity: 0;
+}
+
+.cloud:nth-child(n+9) {
+    --cloud-color: #293F54;
+}
+
+.cloud:nth-child(1),
+.cloud:nth-child(2),
+.cloud:nth-child(3) {
+    --cloud-color: #60819D;
+}
+
+.cloud:nth-child(4),
+.cloud:nth-child(5) {
+    --cloud-color: #496580;
+}
+
+.cloud:nth-child(6),
+.cloud:nth-child(7) {
+    --cloud-color: #364E65;
+}
+
+.cloud:nth-child(8) {
+    --cloud-color: #293F54;
+}
+
+#ground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    background-color: #65a844;
+    border-radius: 50% 50% 0 0 / 15% 15% 0 0;
+}
+#scene {
+    margin-left: 70px;
+    margin-top: 25px;
+    margin-right: 70px;
+   
+    margin-bottom: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 600px;
+    height: 400px;
+    background-color: transparent;
+    overflow: hidden;
+    position: relative;
+    
+
+}
+
+
+.tracking-box {
+    
+    width: 100px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+
+
+#tracking {
+
+height: 330px;
+width: 30px;
+background-color: grey;
+position: relative;
+
+
+
+  background: linear-gradient(
+        to bottom,
+        rgba(255, 0, 0, 0.904) 0%,
+        orangered 14%,
+        orange 24%,
+        yellow 38%,
+        yellowgreen 60%,
+        rgb(0, 200, 255) 68%,
+        dodgerblue 78%,
+        slateblue 88%,
+        rgb(88, 0, 165) 100%
+    );
+}
+
+#tracking::before,
+#tracking::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+}
+
+#tracking::before {
+    top: -12px;
+    border-bottom: 25px solid  rgba(255, 0, 0, 0.904);
+}
+
+#tracking::after {
+    bottom: -12px;
+    border-top: 25px solid  rgb(88, 0, 165);
+}
+
+#ball {
+
+height: 40px;
+width: 40px;
+border-radius: 50px;
+background-color: rgb(88, 0, 165) ;
+position: absolute;
+transition: background-color ease 1ms;
+cursor: default;
+touch-action: none;
+left: 45px;
+box-shadow: 2px black;
+bottom: -12px;
+
+}
+
+#ball::after {
+    content: "";
+    position: absolute;
+    width: var(--stick-width, 20px);
+    height: 8px;
+    background-color: inherit;
+    left: var(--stick-left, -15px);
+    top: 15px;
+}
+
+#upbutton  {
+    margin: 50px;
+}
+
+#word-box {
+    
+    height: 70px;
+    width: 425px;
+    position: absolute;
+    bottom: 20px;
+    left: 140px;
+    padding: 0;
+
+}
+
+#word {
+   
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow-wrap: anywhere;
+    font-size: 60px;
+    font-family: "Comic relief";
+    font-weight: 500;
+    
+   
+}
+
+#word span {
+    display: inline-block;
+    width: 45px;
+    text-align: center;
+    white-space: nowrap;
+    border-bottom: 2px solid black;
+    padding-bottom: 5px;
+    margin: 0 2px;
+    box-sizing: border-box;
+}
+
+@keyframes float {
+    from {
+        translate: -60px 0;
+    }
+
+    to {
+        translate: 60px 0;
+    }
+}
+
+.cloud:nth-child(2) {
+    animation-duration: 25s;
+}
+
+.cloud:nth-child(3) {
+    animation-duration: 30s;
+}

@@ -1,0 +1,310 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+    flex-direction: column;
+    overflow: hidden;
+
+}
+
+#scene-nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 1px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#scene-nav a {
+    width: 75px;
+    height: 75px;
+    background-color: black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid white;
+}
+
+#scene-nav img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+    
+    background-color: black;
+}
+
+
+#scene {
+    margin-left: 70px;
+    margin-top: 25px;
+    margin-right: 70px;
+   
+    margin-bottom: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 600px;
+    height: 400px;
+    background-color: transparent;
+    overflow: hidden;
+    position: relative;
+    
+
+}
+
+
+.tracking-box {
+    
+    width: 100px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+
+
+#tracking {
+
+height: 330px;
+width: 30px;
+background-color: grey;
+position: relative;
+
+
+
+  background: linear-gradient(
+        to bottom,
+        rgba(255, 0, 0, 0.904) 0%,
+        orangered 14%,
+        orange 24%,
+        yellow 38%,
+        yellowgreen 60%,
+        rgb(0, 200, 255) 68%,
+        dodgerblue 78%,
+        slateblue 88%,
+        rgb(88, 0, 165) 100%
+    );
+}
+
+#tracking::before,
+#tracking::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+}
+
+#tracking::before {
+    top: -12px;
+    border-bottom: 25px solid  rgba(255, 0, 0, 0.904);
+}
+
+#tracking::after {
+    bottom: -12px;
+    border-top: 25px solid  rgb(88, 0, 165);
+}
+
+#ball {
+
+height: 40px;
+width: 40px;
+border-radius: 50px;
+background-color: rgb(88, 0, 165) ;
+position: absolute;
+transition: background-color ease 1ms;
+cursor: default;
+touch-action: none;
+left: 45px;
+box-shadow: 2px black;
+bottom: -12px;
+
+}
+
+#ball::after {
+    content: "";
+    position: absolute;
+    width: var(--stick-width, 20px);
+    height: 8px;
+    background-color: inherit;
+    left: var(--stick-left, -15px);
+    top: 15px;
+}
+
+
+#word-box {
+    
+    height: 70px;
+    width: 425px;
+    position: absolute;
+    bottom: 20px;
+    left: 140px;
+    padding: 0;
+    
+
+}
+
+#word {
+   
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow-wrap: anywhere;
+    font-size: 60px;
+    font-family: "Comic relief";
+    font-weight: 500;
+    color: black;
+    
+   
+}
+
+#word span.space {
+    border: none;
+    width: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+#word span {
+    display: inline-block;
+    width: 45px;
+    text-align: center;
+    white-space: nowrap;
+    border-bottom: 2px solid black;
+    padding-bottom: 5px;
+    margin: 0 2px;
+    box-sizing: border-box;
+}
+
+
+#noneof-sky {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:  rgb(159, 159, 246);
+    z-index: -1;
+}
+
+#noneof-ground {
+
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background-color: white;
+    border-radius: 50% 50% 0 0 / 5% 5% 0 0;
+
+}
+
+#penguin-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.penguin {
+    position: absolute;
+    width: 33px;
+    height: 47px;
+    background-color: #20252B;
+    border-radius: 50% 50% 45% 45%;
+    left: 200px;
+    top: 200px;
+}
+
+/* White belly */
+.belly {
+    position: absolute;
+    width: 23px;
+    height: 32px;
+    background-color: white;
+    border-radius: 50%;
+    bottom: 2px;
+    left: 5px;
+}
+
+/* Eyes */
+.eye {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background-color: white;
+    border-radius: 50%;
+    top: 13px;
+}
+
+.left-eye {
+    left: 9px;
+}
+
+.right-eye {
+    right: 9px;
+}
+
+/* Orange beak */
+.beak {
+    position: absolute;
+    top: 18px;
+    left: 14px;
+    width: 0;
+    height: 0;
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+    border-top: 4px solid orange;
+}
+
+/* Flippers */
+.flipper {
+    position: absolute;
+    width: 8px;
+    height: 22px;
+    background-color: #20252B;
+    border-radius: 50%;
+    top: 22px;
+    z-index: -1;
+}
+
+.left.flipper {
+    left: -4px;
+    transform: rotate(25deg);
+}
+
+.right.flipper {
+    right: -4px;
+    transform: rotate(-25deg);
+}
+
+/* Feet */
+.foot {
+    position: absolute;
+    width: 10px;
+    height: 4px;
+    background-color: orange;
+    border-radius: 50%;
+    bottom: -2px;
+}
+
+.left-foot {
+    left: 4px;
+}
+
+.right-foot {
+    right: 4px;
+}
