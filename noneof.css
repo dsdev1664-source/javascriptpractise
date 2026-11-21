@@ -2,10 +2,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
- 
     flex-direction: column;
-    overflow: hidden;
-
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin: 0;
 }
 
 #scene-nav {
@@ -27,6 +28,7 @@ body {
     align-items: center;
     overflow: hidden;
     border: 1px solid white;
+    z-index: 10;
 }
 
 #scene-nav img {
@@ -207,10 +209,20 @@ bottom: -12px;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 40%;
+    height: 45%;
     background-color: white;
     border-radius: 50% 50% 0 0 / 5% 5% 0 0;
 
+}
+
+#mound {
+    background-color: white;
+    height: 250px;
+    width: 300px;
+    border-radius: 100px 100px 0 0;
+    bottom: 50px;
+    left: 200px;
+    position: absolute;
 }
 
 #penguin-container {
@@ -227,8 +239,9 @@ bottom: -12px;
     border-radius: 50% 50% 45% 45%;
     left: 200px;
     top: 200px;
+    transform: scale(1.2);
+    transform-origin: top left;
 }
-
 /* White belly */
 .belly {
     position: absolute;
@@ -307,4 +320,50 @@ bottom: -12px;
 
 .right-foot {
     right: 4px;
+}
+/* Penguins on the ground */
+.penguin:nth-child(1) {
+    left: 260px;
+    top: 280px;
+}
+
+.penguin:nth-child(2) {
+    left: 305px;
+    top: 250px;
+}
+
+.penguin:nth-child(3) {
+    left: 175px;
+    top: 290px;
+}
+
+.penguin:nth-child(4) {
+    left: 440px;
+    top: 275px;
+}
+
+.penguin:nth-child(5) {
+    left: 510px;
+    top: 245px;
+}
+
+.penguin:nth-child(6) {
+    left: 560px;
+    top: 290px;
+}
+
+.penguin:nth-child(7) {
+    left: 370px;
+    top: 300px;
+}
+
+/* Two penguins on the mound */
+.penguin:nth-child(8) {
+    left: 270px;
+    top: 180px;
+}
+
+.penguin:nth-child(9) {
+    left: 340px;
+    top: 180px;
 }
