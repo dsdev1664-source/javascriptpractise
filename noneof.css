@@ -209,27 +209,12 @@ bottom: -12px;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 45%;
+    height: 80%;
     background-color: white;
     border-radius: 50% 50% 0 0 / 5% 5% 0 0;
 
 }
 
-#mound {
-    background-color: white;
-    height: 250px;
-    width: 300px;
-    border-radius: 100px 100px 0 0;
-    bottom: 50px;
-    left: 200px;
-    position: absolute;
-}
-
-#penguin-container {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
 
 .penguin {
     position: absolute;
@@ -237,10 +222,25 @@ bottom: -12px;
     height: 47px;
     background-color: #20252B;
     border-radius: 50% 50% 45% 45%;
-    left: 200px;
-    top: 200px;
-    transform: scale(1.2);
+    left: 25px;
+    top: 180px;
+    transform: scale(1.7);
     transform-origin: top left;
+    
+    
+}
+
+#scene {
+    position: relative;
+}
+
+#penguin-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
 }
 /* White belly */
 .belly {
@@ -321,49 +321,118 @@ bottom: -12px;
 .right-foot {
     right: 4px;
 }
-/* Penguins on the ground */
-.penguin:nth-child(1) {
-    left: 260px;
-    top: 280px;
+
+
+/* HAT */
+.hat {
+    position: absolute;
+    width: 17px;
+    height: 10px;
+    background: crimson;
+    border-radius: 9px 9px 3px 3px;
+    top: 0px;
+    left: 8px;
 }
 
-.penguin:nth-child(2) {
-    left: 305px;
-    top: 250px;
+.hat::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 4px;
+    background: crimson;
+    border-radius: 4px;
+    bottom: -2px;
+    left: -1.5px;
 }
 
-.penguin:nth-child(3) {
-    left: 175px;
-    top: 290px;
+/* SCARF */
+.scarf {
+    position: absolute;
+    width: 27px;
+    height: 6px;
+    background: dodgerblue;
+    border-radius: 3px;
+    left: 3px;
+    top: 22px;
 }
 
-.penguin:nth-child(4) {
-    left: 440px;
-    top: 275px;
+.scarf::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 12px;
+    background: dodgerblue;
+    border-radius: 2px;
+    left: 17px;
+    top: 4px;
+    transform: rotate(-10deg);
 }
 
-.penguin:nth-child(5) {
-    left: 510px;
-    top: 245px;
+/* HIDE CLOTHES UNTIL WE ADD THEM */
+.hat, .scarf {
+    display: none;
 }
 
-.penguin:nth-child(6) {
-    left: 560px;
-    top: 290px;
+.penguin {
+    --hat-scale: 1.4;
+    --scarf-scale: 1.3;
+
+    position: absolute;
+    width: 33px;
+    height: 49px;
+    /* keep your other existing properties */
+}
+.hat {
+    transform: scale(var(--hat-scale));
+    transform-origin: bottom center;
 }
 
-.penguin:nth-child(7) {
-    left: 370px;
-    top: 300px;
+.scarf {
+    transform: scale(var(--scarf-scale));
+    transform-origin: center;
 }
 
-/* Two penguins on the mound */
-.penguin:nth-child(8) {
-    left: 270px;
-    top: 180px;
+.penguin.dressed .hat,
+.penguin.dressed .scarf {
+    display: block;
 }
 
-.penguin:nth-child(9) {
-    left: 340px;
-    top: 180px;
+
+.hat, .scarf {
+    display: block;
+    opacity: 0;
+    transform: scale(1);
+    transition: opacity 0.35s ease, transform 0.35s ease;
 }
+
+
+.penguin {
+    --clothes-scale: 1.4;
+}
+
+
+.penguin.dressed .hat,
+.penguin.dressed .scarf {
+    opacity: 1;
+    transform: scale(var(--clothes-scale, 1.3));
+}
+/* Row 1 */
+.penguin:nth-child(1)  { left: 150px; top: 36px; }
+.penguin:nth-child(2)  { left: 240px; top: 40px; }
+.penguin:nth-child(3)  { left: 330px; top: 37px; }
+.penguin:nth-child(4)  { left: 420px; top: 41px; }
+.penguin:nth-child(5)  { left: 510px; top: 38px; }
+
+/* Row 2 */
+.penguin:nth-child(6)  { left: 150px; top: 136px; }
+.penguin:nth-child(7)  { left: 240px; top: 140px; }
+.penguin:nth-child(8)  { left: 330px; top: 137px; }
+.penguin:nth-child(9)  { left: 420px; top: 141px; }
+.penguin:nth-child(10) { left: 510px; top: 138px; }
+
+/* Row 3 */
+.penguin:nth-child(11) { left: 150px; top: 235px; }
+.penguin:nth-child(12) { left: 240px; top: 238px; }
+.penguin:nth-child(13) { left: 330px; top: 234px; }
+.penguin:nth-child(14) { left: 420px; top: 237px; }
+.penguin:nth-child(15) { left: 510px; top: 238px; }
