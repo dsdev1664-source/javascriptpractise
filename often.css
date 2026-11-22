@@ -1,0 +1,230 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+    flex-direction: column;
+    overflow: hidden;
+
+}
+
+#scene-nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 1px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#scene-nav a {
+    width: 75px;
+    height: 75px;
+    background-color: black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid white;
+}
+
+#scene-nav img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+    
+    background-color: black;
+}
+
+#often-sky {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(228, 214, 193);
+    z-index: -1;
+}
+
+#often-ground {
+
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 15%;
+    background-color: #65a844;
+    border-radius: 50% 50% 0 0 / 15% 15% 0 0;
+
+}
+
+#scene {
+    margin-left: 70px;
+    margin-top: 25px;
+    margin-right: 70px;
+   
+    margin-bottom: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 600px;
+    height: 400px;
+    background-color: transparent;
+    overflow: hidden;
+    position: relative;
+    
+
+}
+
+
+.tracking-box {
+    
+    width: 100px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+
+
+#tracking {
+
+height: 330px;
+width: 30px;
+background-color: grey;
+position: relative;
+
+
+
+  background: linear-gradient(
+        to bottom,
+        rgba(255, 0, 0, 0.904) 0%,
+        orangered 14%,
+        orange 24%,
+        yellow 38%,
+        yellowgreen 60%,
+        rgb(0, 200, 255) 68%,
+        dodgerblue 78%,
+        slateblue 88%,
+        rgb(88, 0, 165) 100%
+    );
+}
+
+#tracking::before,
+#tracking::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+}
+
+#tracking::before {
+    top: -12px;
+    border-bottom: 25px solid  rgba(255, 0, 0, 0.904);
+}
+
+#tracking::after {
+    bottom: -12px;
+    border-top: 25px solid  rgb(88, 0, 165);
+}
+
+#ball {
+
+height: 40px;
+width: 40px;
+border-radius: 50px;
+background-color: rgb(88, 0, 165) ;
+position: absolute;
+transition: background-color ease 1ms;
+cursor: default;
+touch-action: none;
+left: 45px;
+box-shadow: 2px black;
+bottom: -12px;
+
+}
+
+#ball::after {
+    content: "";
+    position: absolute;
+    width: var(--stick-width, 20px);
+    height: 8px;
+    background-color: inherit;
+    left: var(--stick-left, -15px);
+    top: 15px;
+}
+
+
+#word-box {
+    
+    height: 70px;
+    width: 460px;
+    position: absolute;
+    bottom: 20px;
+    left: 120px;
+    padding: 0;
+    
+
+}
+
+#word {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    overflow-wrap: anywhere;
+    font-size: 40px;
+    font-family: "Comic relief";
+    font-weight: 500;
+    color: black;
+}
+
+#word {
+    white-space: normal;
+    text-align: center;
+}
+
+#word span.space {
+    border: none;
+    width: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+#word span {
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+    white-space: nowrap;
+    border-bottom: 2px solid black;
+    padding-bottom: 5px;
+    margin: 0 2px;
+    box-sizing: border-box;
+}
+
+
+
+#word-box {
+    height: 140px;
+}
+
+#word .line-break {
+    flex-basis: 100%;
+    height: 0;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
