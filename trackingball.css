@@ -10,6 +10,23 @@ body {
 
 }
 
+.exit-button {
+
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    bottom: -30px;
+    right: 0px;
+    
+
+} 
+
+.exit-button img {
+    height: 100%;
+    width: 100%;
+
+}
+
 
 #scene-nav {
     display: flex;

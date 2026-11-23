@@ -1,0 +1,20 @@
+.cline-link {
+    border: red solid 2px;
+    width: 70px;
+    height: 70px;
+    right: 100px;
+    position: absolute;
+    border-radius: 10px;
+    overflow: hidden;
+    top: 50px;
+
+}
+
+.cline-link img {
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+
+}
+
+
