@@ -8,7 +8,7 @@
     display: block;
     border-radius: 5px;
     overflow: hidden;
-    border: 2px solid rgb(109, 109, 109);
+    border: 2px solid rgb(85, 85, 255);
 }
 
 
@@ -24,7 +24,21 @@ h1 {
   color: rgba(0, 0, 0, 0.71);
 margin-top: 15px;
 margin-bottom: 13px;
+font-size: 28px;
 
+
+
+}
+
+.line-connect {
+    height: 2px;
+    background-color: blue;
+    top: 165px;
+    left: 229px;
+    position: absolute;
+    width: 70px;
+    
+    
 
 }
 
@@ -34,18 +48,7 @@ margin-bottom: 13px;
     content: "";
     position: absolute;
     inset: 0;
-    background-color: black;
-    background: linear-gradient(
-        45deg,
-        red,
-        orange,
-        yellow,
-        lime,
-        cyan,
-        blue,
-        purple,
-        red
-    );
+    background-color: rgb(85, 85, 255);
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -73,7 +76,7 @@ margin-bottom: 13px;
 }
 
 .study-grid {
-    background-color: rgb(240, 244, 244);
+    background-color: white;
     height: 100vh;
     width: 100vw;
     position: relative;
@@ -100,13 +103,14 @@ margin-bottom: 13px;
 .level3 {
 
 background-color: rgba(238, 238, 255, 0.811);
-height: 200px;
+height: 240px;
 display: flex;
 align-items: center;
 justify-content: left;
-padding: 5px;
-margin-left: 5px;
+padding: 0px;
+margin-left: 10px;
 border-radius: 2px;
+
 
 
 }
@@ -115,7 +119,8 @@ border-radius: 2px;
     height: 200px;
     width: 200px;
     border: grey 2px solid;
-    margin-top: 10px;
+    margin-top: 0px;
+    margin-left: 15px;
 }
 
 .book-placeholder img {

@@ -7,6 +7,30 @@ const word = document.getElementById("word");
 
 const words = ["never", "almost never", "rarely", "sometimes", "often|frequently", "usually", "almost always", "always"];
 
+const calendarSquares = document.querySelectorAll(".calendar-square");
+
+const tickCounts = [0, 1, 3, 7, 12, 14, 15, 16];
+
+// Randomise the square positions once
+const shuffledSquares = Array.from(calendarSquares);
+
+for (let i = shuffledSquares.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+
+    [shuffledSquares[i], shuffledSquares[j]] =
+    [shuffledSquares[j], shuffledSquares[i]];
+}
+
+function updateCalendar(wordIndex) {
+
+    calendarSquares.forEach(square => {
+        square.querySelector(".tick").style.display = "none";
+    });
+
+    for (let i = 0; i < tickCounts[wordIndex]; i++) {
+        shuffledSquares[i].querySelector(".tick").style.display = "block";
+    }
+}
 
 let ballY = 0;
 let isDragging = false;
@@ -36,25 +60,30 @@ function displayWord(text) {
 }
 
 function updateWord(percentage) {
-    if (percentage >= 80) {
-        displayWord(words[0]);
-    } else if (percentage >= 71) {
-        displayWord(words[1]);
-    } else if (percentage >= 58) {
-        displayWord(words[2]);
-    } else if (percentage >= 50) {
-        displayWord(words[3]);
-    } else if (percentage >= 35) {
-        displayWord(words[4]);
-    } else if (percentage >= 19) {
-        displayWord(words[5]);
-    } else if (percentage >= 2) {
-        displayWord(words[6]);
-    } else {
-        displayWord(words[7]);
-    }
-}
 
+    let wordIndex;
+
+    if (percentage >= 80) {
+        wordIndex = 0;
+    } else if (percentage >= 71) {
+        wordIndex = 1;
+    } else if (percentage >= 58) {
+        wordIndex = 2;
+    } else if (percentage >= 50) {
+        wordIndex = 3;
+    } else if (percentage >= 35) {
+        wordIndex = 4;
+    } else if (percentage >= 19) {
+        wordIndex = 5;
+    } else if (percentage >= 2) {
+        wordIndex = 6;
+    } else {
+        wordIndex = 7;
+    }
+
+    displayWord(words[wordIndex]);
+    updateCalendar(wordIndex);
+}
 
 // Grab the ball
 ball.addEventListener("pointerdown", function(event) {

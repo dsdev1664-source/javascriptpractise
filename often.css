@@ -7,34 +7,60 @@ body {
     overflow: hidden;
 
 }
-
 #scene {
-   position: relative;
+    position: relative;
 }
 
-.frequency-calendar {
+#frequency-calendar {
     position: absolute;
-    top: 80px;
-    left: 300px;
-    width: 390px;
-    height: 378px;
-    background: lightblue;
-    border: 2px solid red;
+    top: 0px;
+    left: 130px;
+    width: 430px;
+    height: 380px;
     z-index: 10;
+    display: flex;
+    justify-content: center;
 }
 
 .calendar-background {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 70%;
     object-fit: contain;
     top: 0;
     left: 0;
     z-index: 0;
+    margin-top: 20px;
 }
+
+
+.calendar-grid {
+    position: absolute;
+    top: 79.5px;
+    left: 100px;
+    display: grid;
+    grid-template-columns: repeat(4, 55px);
+    gap: 5px;
+    z-index: 2;
+}
+
 .calendar-square {
     position: relative;
-    z-index: 1;
+    width: 50px;
+}
+
+.calendar-square img {
+    width: 100%;
+    height: auto;
+}
+
+/* Green tick */
+.calendar-square .tick {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: none;
 }
 
 #scene-nav {
@@ -215,7 +241,7 @@ bottom: -12px;
     height: 70px;
     width: 460px;
     position: absolute;
-    bottom: 20px;
+    bottom: 1px;
     left: 120px;
     padding: 0;
     

@@ -10,6 +10,20 @@ body {
 
 }
 
+.rain-boy {
+position: absolute;
+left: -120px;
+bottom: -80px;
+height: 300px;
+width: 300px;
+}
+
+.rain-boy img{
+height: 100%;
+width: 100%;
+    
+}
+
 .exit-button {
 
     position: absolute;
@@ -247,7 +261,7 @@ body {
     margin-right: 70px;
    
     margin-bottom: 10px;
-    border: 2px solid rgb(88, 0, 165);
+    border: 2px solid black;
     border-radius: 10px;
     width: 600px;
     height: 400px;
