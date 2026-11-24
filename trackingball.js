@@ -88,34 +88,42 @@ let percentage = (ballY / 330) * 100;
 if (percentage < 12) {
     ball.style.backgroundColor = " rgba(255, 0, 0, 0.904)";
     displayWord("definitely");
+    scene.style.borderColor = " rgba(255, 0, 0, 0.904)";
     
 } else if (percentage < 16) {
     ball.style.backgroundColor = "orangered";
     displayWord("certainly");
+    scene.style.borderColor = "orangered";
     
 } else if (percentage < 25) {
     ball.style.backgroundColor = "orange";
     displayWord("certainly");
+    scene.style.borderColor = "orange";
     
 } else if (percentage < 43) {
     ball.style.backgroundColor = "yellow";
     displayWord("surely");
+    scene.style.borderColor = "yellow";
     
 } else if (percentage < 55) {
     ball.style.backgroundColor = "yellowgreen";
     displayWord("probably");
+    scene.style.borderColor = "yellowgreen";
     
 } else if (percentage < 67) {
     ball.style.backgroundColor = " rgb(0, 200, 255)";
     displayWord("perhaps/maybe");
+    scene.style.borderColor = "rgb(0, 200, 255)";
     
 } else if (percentage < 80) {
     ball.style.backgroundColor = "dodgerblue";
     displayWord("perhaps/maybe");
+    scene.style.borderColor = "dodgerblue";
     
 } else {
     ball.style.backgroundColor = " rgb(88, 0, 165)";
     displayWord("possibly");
+    scene.style.borderColor = "rgb(88, 0, 165)";
     
 }
    

@@ -8,6 +8,35 @@ body {
 
 }
 
+#scene {
+   position: relative;
+}
+
+.frequency-calendar {
+    position: absolute;
+    top: 80px;
+    left: 300px;
+    width: 390px;
+    height: 378px;
+    background: lightblue;
+    border: 2px solid red;
+    z-index: 10;
+}
+
+.calendar-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+.calendar-square {
+    position: relative;
+    z-index: 1;
+}
+
 #scene-nav {
     display: flex;
     justify-content: center;
