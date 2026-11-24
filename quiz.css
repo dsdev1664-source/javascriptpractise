@@ -4,9 +4,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
-.wholepage img {
+.wholepage > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.back-button {
+    position: absolute;
+    bottom: 20px;
+    left: 500px;
+    width: 140px;
+    height: 100px;
+}
+
+.back-button img {
     width: 100%;
     height: 100%;
     object-fit: contain;
