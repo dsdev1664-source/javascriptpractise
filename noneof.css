@@ -453,3 +453,44 @@ bottom: -12px;
 .penguin:nth-child(13) { left: 330px; top: 234px; }
 .penguin:nth-child(14) { left: 420px; top: 237px; }
 .penguin:nth-child(15) { left: 510px; top: 238px; }
+
+
+/* Small wing movement */
+@keyframes flap {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(25deg);
+    }
+}
+
+/* Little foot movement */
+@keyframes footMove {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(-25deg) translateY(-2px);
+    }
+}
+
+/* Small body movement */
+@keyframes wobble {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(4deg);
+    }
+}
+
+/* Blink */
+@keyframes blink {
+    0%, 90%, 100% {
+        transform: scaleY(1);
+    }
+    95% {
+        transform: scaleY(0.1);
+    }
+}

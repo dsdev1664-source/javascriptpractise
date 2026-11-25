@@ -8,6 +8,9 @@ const firstPenguin = document.querySelector(".penguin");
 
 const words = ["none of", "some", "a lot of", "most of", "all"];
 
+
+
+
 let ballY = 0;
 let isDragging = false;
 let grabOffset = 0;
@@ -141,3 +144,5 @@ document.addEventListener("pointerup", function() {
     isDragging = false;
     document.body.style.cursor = "default";
 });
+
+
