@@ -11,9 +11,10 @@
     border: blue solid 2px;
     padding: 0px;
     background-color:  rgb(85, 85, 255);;
-    filter: brightness(90%);
+    filter: brightness(100%);
     
 }
+
 
 
 body {
